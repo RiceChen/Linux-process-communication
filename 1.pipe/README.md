@@ -78,3 +78,12 @@
                 </div>
         </ul>
 </ul>
+
+<h2> 例程 </h2>
+<ul>
+    <h3>通道例程中，提供了有名管道的读例程和写例程，例程请参考当前文件的read.c和write.c</h3>
+    <h3><运行结果></h3>
+    <div align="center">
+        <img src="../picture/pipe_results.png" width="70%">
+    </div>
+</ul>
