@@ -57,3 +57,12 @@
             </div>
     </h3>
 </ul>
+
+<h2> 例程 </h2>
+<ul>
+    <h3>共享内存例程请参考当前文件夹的write.c和read.c</h3>
+    <h3><运行结果></h3>
+    <div align="center">
+        <img src="../picture/*.png" width="70%">
+    </div>
+</ul>
