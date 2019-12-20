@@ -60,9 +60,9 @@
 
 <h2> 例程 </h2>
 <ul>
-    <h3>共享内存例程请参考当前文件夹的write.c和read.c</h3>
+    <h3>共享内存例程请参考当前文件夹的write.c和read.c，在这个例程中同时应用了信号的知识，顺便稳固了之前学到的知识一举两得</h3>
     <h3><运行结果></h3>
     <div align="center">
-        <img src="../picture/*.png" width="70%">
+        <img src="../picture/share_memory_results.png" width="70%">
     </div>
 </ul>
