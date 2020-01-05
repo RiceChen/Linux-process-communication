@@ -26,8 +26,8 @@ int init_sem(int sem_id, int value)
 int sem_p(int sem_id)
 {
     struct sembuf sbuf;
-    sbuf.sem_num = 0; /*序号*/
-    sbuf.sem_op = -1; /*P操作*/
+    sbuf.sem_num = 0;
+    sbuf.sem_op = -1;
     sbuf.sem_flg = SEM_UNDO;
 
     if(semop(sem_id, &sbuf, 1) == -1)
@@ -41,8 +41,8 @@ int sem_p(int sem_id)
 int sem_v(int sem_id)
 {
     struct sembuf sbuf;
-    sbuf.sem_num = 0; /*序号*/
-    sbuf.sem_op = 1;  /*V操作*/
+    sbuf.sem_num = 0;
+    sbuf.sem_op = 1;
     sbuf.sem_flg = SEM_UNDO;
 
     if(semop(sem_id, &sbuf, 1) == -1)
@@ -66,7 +66,7 @@ int del_sem(int sem_id)
 
 int main()
 {
-    int sem_id;  // 信号量集ID
+    int sem_id;
     key_t key;  
     pid_t pid;
 
@@ -86,18 +86,18 @@ int main()
  
     if((pid = fork()) == -1)
         perror("Fork Error");
-    else if(pid == 0) /*子进程*/ 
+    else if(pid == 0)
     {
         sleep(2);
         printf("Process child: pid=%d\n", getpid());
-        sem_v(sem_id);  /*释放资源*/
+        sem_v(sem_id);
     }
     else  /*父进程*/
     {
-        sem_p(sem_id);   /*等待资源*/
+        sem_p(sem_id);
         printf("Process father: pid=%d\n", getpid());
-        sem_v(sem_id);   /*释放资源*/
-        del_sem(sem_id); /*删除信号量集*/
+        sem_v(sem_id);
+        del_sem(sem_id);
     }
     return 0;
 }
