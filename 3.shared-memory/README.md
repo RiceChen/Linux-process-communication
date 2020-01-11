@@ -45,7 +45,7 @@
             </ul>
         <li>shmat()函数：内存映射，并获的映射地址</li>
             <div align="center">
-                <img src="../picture/share_memory_shmget_func.png" width="70%">
+                <img src="../picture/share_memory_shmat_func.png" width="70%">
             </div>
         <li>shmdt()函数：断开共享内存连接</li>
             <div align="center">
@@ -53,7 +53,7 @@
             </div>
         <li>shmctl()函数：共享内存管理</li>
             <div align="center">
-                <img src="../picture/share_memory_shmdt_func.png" width="70%">
+                <img src="../picture/share_memory_shmctl_func.png" width="70%">
             </div>
     </h3>
 </ul>
