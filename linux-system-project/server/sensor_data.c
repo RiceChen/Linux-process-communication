@@ -41,26 +41,19 @@ int main(int argc, char *argv[])
     } else {
         printf("shmaddr is %p\n", shm_addr);
     }
-    
-    //通过信号实现进程的异步通信
-    shm_addr->pid_w = getpid();
-    signal(SIGUSR2, write_mem_handler);
 
     shm_addr->kill_flag = 0;
 
-    //通过随机数种子，模拟传感器采集数据
-    srand((int)time(NULL));
-    shm_addr->temperaturn = (float)(rand() % 100);
-    shm_addr->humidness = (float)(rand() % 100);
-    shm_addr->illumination = (float)(rand() % 100);
-
-    //printf("%f\t%f\t%f\n",shm_addr->temperaturn,shm_addr->humidness,shm_addr->illumination);
-
     //向读进程发送信号
     do {
-        kill(shm_addr->pid_r, SIGUSR1);
-        pause();
-    } while(shm_addr->kill_flag == 1);
+        //通过随机数种子，模拟传感器采集数据
+        srand((int)time(NULL));
+        shm_addr->temperaturn = (float)(rand() % 100);
+        shm_addr->humidness = (float)(rand() % 100);
+        shm_addr->illumination = (float)(rand() % 100);
+        sleep(5);
+        //printf("%f\t%f\t%f\n",shm_addr->temperaturn,shm_addr->humidness,shm_addr->illumination);
+    } while(shm_addr->kill_flag == 0);
 
     //断开共享内存连接
     if(shmdt(shm_addr) < 0) {

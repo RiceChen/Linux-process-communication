@@ -10,7 +10,6 @@ struct msg_form {
     char mtext;
 };
 
-
 union semun
 {
     int              val; /*for SETVAL*/
