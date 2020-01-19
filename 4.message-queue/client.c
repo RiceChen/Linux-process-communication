@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define MSG_FILE "./message_file.txt"
+#define MSG_FILE "."
 
 struct msg_form {
     long mtype;

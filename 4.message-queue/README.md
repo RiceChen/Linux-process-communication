@@ -61,3 +61,11 @@
             </div>
     </h3>
 </ul>
+<h2> 例程 </h2>
+<ul>
+    <h3>消息队列例程请参考当前文件夹的server.c和client.c</h3>
+    <h3><运行结果></h3>
+    <div align="center">
+        <img src="../picture/message_queue_results.png" width="70%">
+    </div>
+</ul>
