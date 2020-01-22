@@ -19,20 +19,27 @@
                 <img src="../picture/semaphore_exmple.png" width="70%">
         </div>
     </h4>
+    <h3>信号量的使用规则</h3>
+    <h4>
+        <li>若信号量为正，则进程可使用该资源</li>
+        <li>若信号量为0，则进程阻塞等待，并将进程插入等待队列，直到该信号量的值大于0从等待队列中执行进程请求</li>
+        <li>加锁操作：如果信号量大于0,则信号量-1;如果信号量为0,则挂起该进程，并将这个进程插入等待队列</li>
+        <li>解锁操作：如果等待队列中有进程则唤醒该进程，让它恢复运行，否则，信号量+1</li>
+    </h4>
 </ul>
 
 <h2>共享内存相关函数</h2>
 <ul>
     <h3>
-        <li>semget()函数：</li>
+        <li>semget()函数：创建新的信号量或取得已有的信号量</li>
             <div align="center">
                 <img src="../picture/semaphore_semget_func.png" width="70%">
             </div>
-        <li>semop()函数：</li>
+        <li>semop()函数：改变信号量的值，改变操作在sem_opa中，sem_opa是sumbuf结构体对象</li>
             <div align="center">
                 <img src="../picture/semaphore_semop_func.png" width="70%">
             </div>
-        <li>semctl()函数:</li>
+        <li>semctl()函数:控制信号量</li>
             <div align="center">
                 <img src="../picture/semaphore_semctl_func.png" width="70%">
             </div>
@@ -41,7 +48,7 @@
 
 h2> 例程 </h2>
 <ul>
-    <h3></h3>
+    <h3>信号量例程请参考当前文件夹的semaphore.c</h3>
     <h3><运行结果></h3>
     <div align="center">
         <img src="../picture/semaphore_results.png" width="70%">
