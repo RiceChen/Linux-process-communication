@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     }
 
     memset(buf, 0, sizeof(buf));
-    sprintf(buf, "%s", "Remote control");
+    sprintf(buf, "%s", "Rice TCP/IP demo");
 
     if((send_byte = send(sock_fd, buf, sizeof(buf), 0) == -1)) {
         perror("send fail!!!\n");

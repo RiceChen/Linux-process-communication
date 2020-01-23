@@ -4,12 +4,12 @@
     </h1>
 </div>
 
-<h2> 1.TCP/IP 模型 </h2>
+<h2>TCP/IP 模型 </h2>
 <div align="center">
     <img src="../picture/TCP_IP_model.png" width="60%">
 </div>
 
-<h2> 2.TCP/IP 三次握手</h2>
+<h2>TCP/IP 三次握手</h2>
 <h4>
     <ul>
     <服务器与客户端建立连接>
@@ -19,7 +19,7 @@
     </ul>
 </h4>
 
-<h2> 3.TCP/IP 四次挥手 </h2>
+<h2>TCP/IP 四次挥手 </h2>
 <h4>
     <ul>
      <服务器与客户端断开连接>
@@ -30,12 +30,18 @@
     </ul>
 </h4>
 
-<h2>4. TCP/IP 流程图</h2>
-<div align="center">
-    <img src="../picture/TCP_IP_flowchart.png" width="50%">
-</div>
+<h2>TCP/IP 流程图</h2>
+    <div align="center">
+        <img src="../picture/TCP_IP_flowchart.png" width="50%">
+    </div>
 
-<h2>5. socket类型</h2>
+<h2>服务端与客户端</h2>
+<h4>
+    <li>服务端：提供服务的一端，它始终等待别人的服务请求，只有“别人主动找它联系，而永远不会主动找别人联系”。为了让别人能够找到它，它必须公开其socket属性：协议-ip地址-端口号</li>
+    <li>客户端：请求服务的一端，主动联系别人的一方，因为它不需要别人找它，所以无需公开其socket属性</li>
+</h4>
+
+<h2>socket类型</h2>
 <h4>
     <ul>
     <li>流式socket（SOCK_STREAM）：流式套接字提供可靠的、面向连接的通信流；它使用TCP协议，从而保证了数据传输的正确性和顺序性。</li>
@@ -44,7 +50,7 @@
     </ul>
 </h4>
 
-<h2>6. TCP/IP 相关函数</h2>
+<h2>TCP/IP 相关函数</h2>
 <ul>
     <h3>
         <li>socket()函数：该函数用于建立一个socket连接（即创建一个套接字），可指定socket类型等信息。在建立了socket连接之后，可对sockaddr或sockaddr_in结构进行初始化，以保存所建立的socket地址信息。</li>
@@ -76,4 +82,13 @@
                 <img src="../picture/TCP_IP_recv_func.png" width="70%">
             </div>
     </h3>
+</ul>
+
+<h2> 例程 </h2>
+<ul>
+    <h3>TCP/IP例程请参考当前文件夹的server.c和client.c</h3>
+    <h3><运行结果></h3>
+    <div align="center">
+        <img src="../picture/TCP_IP_results.png" width="70%">
+    </div>
 </ul>
