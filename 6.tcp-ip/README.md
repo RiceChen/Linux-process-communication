@@ -43,3 +43,37 @@
     <li>原始socket：原始套接字允许对底层协议如IP或ICMP进行直接访问，它功能强大但使用较为不便，主要用于一些协议的开发。</li>
     </ul>
 </h4>
+
+<h2>6. TCP/IP 相关函数</h2>
+<ul>
+    <h3>
+        <li>socket()函数：该函数用于建立一个socket连接（即创建一个套接字），可指定socket类型等信息。在建立了socket连接之后，可对sockaddr或sockaddr_in结构进行初始化，以保存所建立的socket地址信息。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_socket_func.png" width="70%">
+            </div>
+        <li>bind()函数：该函数是用于将socket套接字与本地IP地址及端口号绑定，若绑定其他IP地址则不能成功。另外，它主要用于服务器端，而在客户端则无必要。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_bind_func.png" width="70%">
+            </div>
+        <li>listen()函数：在服务端程序成功建立套接字和与地址进行绑定之后，还需要准备在该套接字上接收新的连接请求。此时调用listen()函数来创建一个等待队列，在其中存放未处理的客户端连接请求。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_listen_func.png" width="70%">
+            </div>
+        <li>accept()函数：服务端程序调用listen()函数创建等待队列之后，调用accept()函数等待并接收客户端的连接请求。它通常从由bind()所创建的等待队列中取出第一个未处理的连接请求。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_accept_func.png" width="70%">
+            </div>
+        <li>connect()函数：该函数在TCP中是用于bind()的之后的client端，用于与服务器端建立连接。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_connect_func.png" width="70%">
+            </div>
+        <li>send()和recv()：这两个函数分别用于发送和接收数据，用在TCP中。</li>
+        <li> sendto()和recvfrom()：这两个函数的作用与send()和recv()函数类似，可以用在TCP和UDP中。当用在TCP时，后面的几个与地址有关参数不起作用，函数作用等同于send()和recv()；主要用在UDP时，这两个函数可以自动寻找指定地址并进行连接。</li>
+            <div align="center">
+                <img src="../picture/TCP_IP_send_func.png" width="70%">
+            </div>
+            <div align="center">
+                <img src="../picture/TCP_IP_recv_func.png" width="70%">
+            </div>
+    </h3>
+</ul>
